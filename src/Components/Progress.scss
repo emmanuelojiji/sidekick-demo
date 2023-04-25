@@ -1,0 +1,35 @@
+.status-icon-container {
+  width: 95px;
+  height: 95px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.start {
+  background: #479f6d;
+  &:hover {
+    background: #3d875d;
+  }
+}
+
+.pause {
+  background: #cf671b;
+}
+
+.in-progress-icon {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,48 @@
+.chat-bubble-wrap {
+  display: flex;
+  color: white;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.chat-bubble {
+  background: #007bff;
+  color: white;
+  width: fit-content;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 500px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.time {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.details {
+  height: 200px;
+  background: #2a313a;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fade-out {
+  animation: fade-out 2s linear forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
