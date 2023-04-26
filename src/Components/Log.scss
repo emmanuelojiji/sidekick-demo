@@ -21,6 +21,11 @@
   padding: 50px;
 }
 
+.chat-bubble-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 @keyframes open {
   0% {
     opacity: 0;
