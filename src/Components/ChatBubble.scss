@@ -22,27 +22,44 @@
 }
 
 .details {
-  height: 200px;
+  max-height: 0px;
   background: #2a313a;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-}
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  color: #dadada;
 
-.fade-out {
-  animation: fade-out 2s linear forwards;
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
+  .details-wrap {
+    padding: 20px;
   }
+}
 
-  50% {
-    opacity: 0;
+.details-expand {
+  animation: details-fade-in 0.3s linear forwards;
+}
+
+.details-collapse {
+  animation: details-fade-out 0.3s linear forwards;
+}
+
+@keyframes details-fade-in {
+  0% {
+    max-height: 0px;
   }
 
   100% {
-    visibility: hidden;
+    max-height: 170px;
+  }
+}
+
+@keyframes details-fade-out {
+  0% {
+    max-height: 170px;
+  }
+
+  100% {
+    max-height: 0px;
   }
 }
