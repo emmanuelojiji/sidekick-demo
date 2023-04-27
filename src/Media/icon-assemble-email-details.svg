@@ -1,0 +1,16 @@
+<svg width="25" height="33" viewBox="0 0 25 33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="695oa84y3a" d="M0 0h25v33H0z"/>
+        <path id="epf5nktbfc" d="M0 33h25V0H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="nw4pbq1rtb" fill="#fff">
+            <use xlink:href="#695oa84y3a"/>
+        </mask>
+        <path d="M23.908 27.941c0 2.151-1.639 3.897-3.657 3.897H4.749c-2.02 0-3.658-1.746-3.658-3.897V5.056c0-2.146 1.639-3.897 3.658-3.897H20.25c2.018 0 3.657 1.75 3.657 3.897V27.94zM20.251-.004H4.749c-2.619 0-4.75 2.27-4.75 5.06V27.94c0 2.79 2.131 5.06 4.75 5.06H20.25C22.869 33 25 30.73 25 27.94V5.056c0-2.79-2.131-5.06-4.75-5.06z" fill="#6C7682" mask="url(#nw4pbq1rtb)"/>
+        <mask id="ful06dayqd" fill="#fff">
+            <use xlink:href="#epf5nktbfc"/>
+        </mask>
+        <path fill="#6C7682" mask="url(#ful06dayqd)" d="M4.56 26.451h15.898V25.29H4.56zM4.56 22.256h15.898v-1.163H4.56zM4.542 18.06h15.916v-1.162H4.542zM4.542 13.865h15.916v-1.163H4.542zM4.542 9.669h15.916V8.506H4.542z"/>
+    </g>
+</svg>

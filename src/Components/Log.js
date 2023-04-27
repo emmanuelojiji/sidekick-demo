@@ -1,11 +1,14 @@
 import "./Log.scss";
 import ChatBubble from "./ChatBubble";
 import Typewriter from "typewriter-effect";
+import { useRef, useEffect } from "react";
 
-const Log = ({ heading, array, displayDetails }) => {
+
+const Log = ({ heading, array, displayDetails, modalRef }) => {
   /*const objectToArray = () => {
   const tasksArray = object.keys(enquiry)
   }*/
+
 
   return (
     <div className="Log">

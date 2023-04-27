@@ -15,7 +15,7 @@ const ChatBubble = ({
       <div className="chat-bubble-details">
         <div className="chat-bubble-wrap">
           <div className="chat-bubble">
-            <p>
+            
               {
                 <Typewriter
                   options={{
@@ -27,7 +27,7 @@ const ChatBubble = ({
                   }}
                 />
               }
-            </p>
+            
           </div>
           <p className="time">10:30</p>
           <p
