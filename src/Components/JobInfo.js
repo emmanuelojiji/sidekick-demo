@@ -4,9 +4,9 @@ import { useState } from "react";
 import InProgress from "./InProgress";
 import Pause from "./Pause";
 import Resume from "./Resume";
-import ProgressLevel from "./ProgressLevel";
+import ProgressLevel from "./Step";
 
-const JobInfo = ({ currentStatus, setCurrentStatus }) => {
+const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
   const [currentAction, setCurrentAction] = useState("start");
   const [isHovered, setIsHovered] = useState(false);
 
@@ -19,12 +19,12 @@ const JobInfo = ({ currentStatus, setCurrentStatus }) => {
 
   return (
     <div className="JobInfo">
-      <div>
-        <h1>Web enquiry: 209735</h1>
-        <p>Jones and Son Logistics</p>
-        <p>Simon Jones</p>
+      <div className="job-info-left">
+        <h1>Web enquiry: <span className="light">{jobNumber}</span></h1>
+        <p className="company-info">Jones and Son Logistics</p>
+        <p className="company-info">Simon Jones</p>
 
-        <p>Enquiry added 2 mins ago</p>
+        <p className="enquiry-added">Enquiry added 2 mins ago</p>
       </div>
 
       {currentAction === "start" && (

@@ -3,7 +3,7 @@
   background: #08101a;
   border-radius: 40px;
   border: dashed 1px #374250;
-  margin-bottom: 55px;
+  margin-bottom: 54px;
 
   animation: open 1s linear forwards;
 
@@ -48,4 +48,9 @@
     visibility: visible;
     opacity: 1;
   }
+}
+
+.heading-light{
+  font-weight:100 ;
+
 }

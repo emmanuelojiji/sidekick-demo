@@ -1,11 +1,13 @@
 import "./App.scss";
 import JobInfo from "./Components/JobInfo";
-import ProgressLevel from "./Components/ProgressLevel";
+import ProgressLevel from "./Components/Step";
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Log from "./Components/Log";
 import ChatBubble from "./Components/ChatBubble";
 import { qualify_web_enquiry_log } from "./Components/Logs";
 import { find_suppliers_log } from "./Components/Logs";
+import Step from "./Components/Step";
+import Header from "./Components/Header";
 
 function App() {
   const [currentStatus, setCurrentStatus] = useState(0);
@@ -14,7 +16,7 @@ function App() {
     qualify_web_enquiry_log
   );
 
-  /*useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setQualifyWebEnquiryLog([
         ...qualifyWebEnquiryLog,
@@ -51,7 +53,7 @@ function App() {
         },
       ]);
     }, 3000);
-  }, []);*/
+  }, []);
 
   return (
     <div className="App">
@@ -61,14 +63,16 @@ function App() {
           setCurrentStatus(currentStatus + 1);
         }}
       >
+        <Header />
         <JobInfo
           currentStatus={currentStatus}
           setCurrentStatus={setCurrentStatus}
+          jobNumber="209735"
         />
 
-        <div className="progress-level-container">
+        <div className="step-container">
           <div className="progress-bar"></div>
-          <ProgressLevel
+          <Step
             heading="Qualify"
             subheading="web enquiry"
             background={currentStatus > 0 && "#479f6d"}
@@ -92,7 +96,7 @@ function App() {
             }
           />
 
-          <ProgressLevel
+          <Step
             heading="Find"
             subheading="suppliers"
             background={currentStatus > 1 && "#479f6d"}
@@ -131,7 +135,7 @@ function App() {
               </svg>
             }
           />
-          <ProgressLevel
+          <Step
             heading="Update"
             subheading="buying lines"
             background={currentStatus > 2 && "#479f6d"}
@@ -177,7 +181,7 @@ function App() {
               </svg>
             }
           />
-          <ProgressLevel
+          <Step
             heading="Calculate"
             subheading="selling prices"
             background={currentStatus > 3 && "#479f6d"}
@@ -212,7 +216,7 @@ function App() {
               </svg>
             }
           />
-          <ProgressLevel
+          <Step
             heading="Assemble"
             subheading="Email Details"
             background={currentStatus > 4 && "#479f6d"}
@@ -250,7 +254,7 @@ function App() {
               </svg>
             }
           />
-          <ProgressLevel
+          <Step
             heading="Generate"
             subheading="customer email"
             background={currentStatus > 5 && "#479f6d"}
@@ -279,7 +283,7 @@ function App() {
               </svg>
             }
           />
-          <ProgressLevel
+          <Step
             heading="Send"
             subheading="customer email"
             background={currentStatus > 6 && "#479f6d"}
@@ -311,40 +315,59 @@ function App() {
         </div>
 
         {currentStatus > 0 && (
-          <Log heading="Qualify web enquiry" array={qualifyWebEnquiryLog}></Log>
+          <Log
+            heading_bold="Qualify"
+            heading_light="web enquiry"
+            array={qualifyWebEnquiryLog}
+          ></Log>
         )}
 
         {currentStatus > 1 && (
-          <Log heading="Find suppliers" array={find_suppliers_log}></Log>
+          <Log
+            heading_bold="Find"
+            heading_light="suppliers"
+            array={find_suppliers_log}
+          ></Log>
         )}
 
         {currentStatus > 2 && (
-          <Log heading="Update buying lines" array={find_suppliers_log}></Log>
+          <Log
+            heading_bold="Update"
+            heading_light="buying lines"
+            array={find_suppliers_log}
+          ></Log>
         )}
 
         {currentStatus > 3 && (
           <Log
-            heading="Calculate selling prices"
+            heading_bold="Calculate"
+            heading_light="selling prices"
             array={find_suppliers_log}
           ></Log>
         )}
 
         {currentStatus > 4 && (
           <Log
-            heading="Assemble email details"
+            heading_bold="Assemble"
+            heading_light="email details"
             array={find_suppliers_log}
           ></Log>
         )}
 
         {currentStatus > 5 && (
           <Log
-            heading="Generate customer email"
+            heading_bold="Generate"
+            heading_light="customer email"
             array={find_suppliers_log}
           ></Log>
         )}
 
         {currentStatus > 6 && (
-          <Log heading="Send customer email" array={find_suppliers_log}></Log>
+          <Log
+            heading_bold="Send"
+            heading_light="customer email"
+            array={find_suppliers_log}
+          ></Log>
         )}
       </div>
     </div>

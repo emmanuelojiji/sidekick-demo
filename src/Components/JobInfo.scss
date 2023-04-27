@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   border-radius: 40px;
-
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 
   .cog {
     min-height: 94x;
@@ -17,4 +17,25 @@
     background: #007bff;
     border-radius: 100%;
   }
+
+  h1 {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  .company-info {
+    color: #798a9f;
+    margin-bottom: 5px;
+  }
+
+  .enquiry-added {
+    color: #cf671b;
+    margin-top: auto;
+  }
+
+  .job-info-left {
+    display: flex;
+    flex-direction: column;
+  }
 }
+

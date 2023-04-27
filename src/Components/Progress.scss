@@ -1,12 +1,15 @@
 .status-icon-container {
-  width: 95px;
-  height: 95px;
+  min-width: 94px;
+  min-height: 94px;
+  max-width: 94px;
+  max-height: 94px;
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: 0.1s ease-in-out;
+  margin-bottom: 17px;
 }
 
 .start {
@@ -32,4 +35,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

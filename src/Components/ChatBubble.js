@@ -15,28 +15,27 @@ const ChatBubble = ({
       <div className="chat-bubble-details">
         <div className="chat-bubble-wrap">
           <div className="chat-bubble">
-            
-              {
-                <Typewriter
-                  options={{
-                    strings: log.message,
-                    autoStart: true,
-                    loop: false,
-                    cursor: "",
-                    delay: 50,
-                  }}
-                />
-              }
-            
+            {
+              <Typewriter
+                options={{
+                  strings: log.message,
+                  autoStart: true,
+                  loop: false,
+                  cursor: "",
+                  delay: 50,
+                }}
+              />
+            }
           </div>
           <p className="time">10:30</p>
           <p
+          className="show-hide"
+            style={{ display: log.tasks.length === 0 && "none" }}
             onClick={() =>
               isDetailExpanded
                 ? setIsDetailExpanded(false)
                 : setIsDetailExpanded(true)
             }
-            style={{ display: displayControls }}
           >
             {isDetailExpanded ? "Hide details" : "Show details"}
           </p>
