@@ -10,12 +10,14 @@ const Log = ({
   displayDetails,
   modalRef,
 }) => {
-  /*const objectToArray = () => {
-  const tasksArray = object.keys(enquiry)
-  }*/
+  const logRef = useRef();
+
+  useEffect(() => {
+    logRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
 
   return (
-    <div className="Log">
+    <div className="Log" ref={logRef}>
       <div className="content">
         <h2 className="heading-bold">
           {heading_bold} <span className="heading-light">{heading_light}</span>

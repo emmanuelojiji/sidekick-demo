@@ -16,6 +16,8 @@ function App() {
     qualify_web_enquiry_log
   );
 
+  
+
   useEffect(() => {
     setTimeout(() => {
       setQualifyWebEnquiryLog([
@@ -55,6 +57,8 @@ function App() {
     }, 3000);
   }, []);
 
+  
+
   return (
     <div className="App">
       <div
@@ -63,6 +67,7 @@ function App() {
           setCurrentStatus(currentStatus + 1);
         }}
       >
+
         <Header />
         <div className="modal-content">
           <JobInfo
@@ -183,6 +188,7 @@ function App() {
               }
             />
             <Step
+            
               heading="Calculate"
               subheading="selling prices"
               background={currentStatus > 3 && "#479f6d"}
@@ -340,11 +346,13 @@ function App() {
           )}
 
           {currentStatus > 3 && (
-            <Log
-              heading_bold="Calculate"
-              heading_light="selling prices"
-              array={find_suppliers_log}
-            ></Log>
+           
+              <Log
+                heading_bold="Calculate"
+                heading_light="selling prices"
+                array={find_suppliers_log}
+              ></Log>
+         
           )}
 
           {currentStatus > 4 && (
