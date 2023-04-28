@@ -59,6 +59,7 @@ function App() {
     if (log.current) {
       log.current.scrollIntoView({
         behavior: "smooth",
+        block: 'center'
       });
     }
   };
