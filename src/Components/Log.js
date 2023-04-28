@@ -13,7 +13,7 @@ const Log = ({
   const logRef = useRef();
 
   useEffect(() => {
-    logRef.current.scrollIntoView({ behavior: "smooth" });
+    logRef.current.scrollIntoView({ behavior: "smooth", block: "center"});
   }, []);
 
   return (

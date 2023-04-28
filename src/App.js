@@ -59,7 +59,7 @@ function App() {
     if (log.current) {
       log.current.scrollIntoView({
         behavior: "smooth",
-        block: 'center'
+        block: "center",
       });
     }
   };
@@ -97,6 +97,7 @@ function App() {
               heading="Qualify"
               subheading="web enquiry"
               background={currentStatus > 0 && "#479f6d"}
+              cursor={currentStatus > 0 && "pointer"}
               icon={
                 <svg
                   width="31"
@@ -122,6 +123,7 @@ function App() {
               heading="Find"
               subheading="suppliers"
               background={currentStatus > 1 && "#479f6d"}
+              cursor={currentStatus > 1 && "pointer"}
               icon={
                 <svg
                   width="33"
@@ -162,6 +164,7 @@ function App() {
               heading="Update"
               subheading="buying lines"
               background={currentStatus > 2 && "#479f6d"}
+              cursor={currentStatus > 2 && "pointer"}
               icon={
                 <svg
                   width="37"
@@ -209,6 +212,7 @@ function App() {
               heading="Calculate"
               subheading="selling prices"
               background={currentStatus > 3 && "#479f6d"}
+              cursor={currentStatus > 3 && "pointer"}
               icon={
                 <svg
                   width="26"
@@ -245,6 +249,7 @@ function App() {
               heading="Assemble"
               subheading="Email Details"
               background={currentStatus > 4 && "#479f6d"}
+              cursor={currentStatus > 4 && "pointer"}
               icon={
                 <svg
                   width="25"
@@ -284,6 +289,7 @@ function App() {
               heading="Generate"
               subheading="customer email"
               background={currentStatus > 5 && "#479f6d"}
+              cursor={currentStatus > 5 && "pointer"}
               icon={
                 <svg
                   width="33"
@@ -314,6 +320,7 @@ function App() {
               heading="Send"
               subheading="customer email"
               background={currentStatus > 6 && "#479f6d"}
+              cursor={currentStatus > 6 && "pointer"}
               icon={
                 <svg
                   width="26"

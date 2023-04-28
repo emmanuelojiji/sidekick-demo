@@ -7,6 +7,7 @@
   width: 14.2857142857%;
   z-index: 2;
   font-size: 12px;
+  
 
   .heading{
     margin-bottom: 5px;
@@ -41,4 +42,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.step-content{
+  width: fit-content;
+  text-align: center;
 }
