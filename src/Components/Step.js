@@ -1,8 +1,8 @@
 import "./Step.scss";
 
-const Step = ({ heading, subheading, background, icon }) => {
+const Step = ({ heading, subheading, background, icon, onClick }) => {
   return (
-    <div className="Step">
+    <div className="Step" onClick={onClick}>
       <div className="icon-container" style={{ background: background }}>
         {icon}
       </div>

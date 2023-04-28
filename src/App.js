@@ -16,8 +16,6 @@ function App() {
     qualify_web_enquiry_log
   );
 
-  
-
   useEffect(() => {
     setTimeout(() => {
       setQualifyWebEnquiryLog([
@@ -57,7 +55,23 @@ function App() {
     }, 3000);
   }, []);
 
-  
+  const scrollToLog = (log) => {
+    if (log.current) {
+      log.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const logRefs = {
+    qualifyWebEnquiryRef: useRef(),
+    findSuppliers: useRef(),
+    updateBuyingLines: useRef(),
+    calculateSellingPrices: useRef(),
+    assembleEmailDetails: useRef(),
+    generateCustomerEmail: useRef(),
+    sendCustomerEmail: useRef(),
+  };
 
   return (
     <div className="App">
@@ -67,7 +81,6 @@ function App() {
           setCurrentStatus(currentStatus + 1);
         }}
       >
-
         <Header />
         <div className="modal-content">
           <JobInfo
@@ -79,6 +92,7 @@ function App() {
           <div className="step-container">
             <div className="progress-bar"></div>
             <Step
+              onClick={() => scrollToLog(logRefs.qualifyWebEnquiryRef)}
               heading="Qualify"
               subheading="web enquiry"
               background={currentStatus > 0 && "#479f6d"}
@@ -103,6 +117,7 @@ function App() {
             />
 
             <Step
+              onClick={() => scrollToLog(logRefs.findSuppliers)}
               heading="Find"
               subheading="suppliers"
               background={currentStatus > 1 && "#479f6d"}
@@ -142,6 +157,7 @@ function App() {
               }
             />
             <Step
+              onClick={() => scrollToLog(logRefs.updateBuyingLines)}
               heading="Update"
               subheading="buying lines"
               background={currentStatus > 2 && "#479f6d"}
@@ -188,7 +204,7 @@ function App() {
               }
             />
             <Step
-            
+              onClick={() => scrollToLog(logRefs.calculateSellingPrices)}
               heading="Calculate"
               subheading="selling prices"
               background={currentStatus > 3 && "#479f6d"}
@@ -224,6 +240,7 @@ function App() {
               }
             />
             <Step
+              onClick={() => scrollToLog(logRefs.assembleEmailDetails)}
               heading="Assemble"
               subheading="Email Details"
               background={currentStatus > 4 && "#479f6d"}
@@ -262,6 +279,7 @@ function App() {
               }
             />
             <Step
+              onClick={() => scrollToLog(logRefs.generateCustomerEmail)}
               heading="Generate"
               subheading="customer email"
               background={currentStatus > 5 && "#479f6d"}
@@ -291,6 +309,7 @@ function App() {
               }
             />
             <Step
+              onClick={() => scrollToLog(logRefs.sendCustomerEmail)}
               heading="Send"
               subheading="customer email"
               background={currentStatus > 6 && "#479f6d"}
@@ -322,61 +341,73 @@ function App() {
           </div>
 
           {currentStatus > 0 && (
-            <Log
-              heading_bold="Qualify"
-              heading_light="web enquiry"
-              array={qualifyWebEnquiryLog}
-            ></Log>
+            <div ref={logRefs.qualifyWebEnquiryRef}>
+              <Log
+                heading_bold="Qualify"
+                heading_light="web enquiry"
+                array={qualifyWebEnquiryLog}
+              ></Log>
+            </div>
           )}
 
           {currentStatus > 1 && (
-            <Log
-              heading_bold="Find"
-              heading_light="suppliers"
-              array={find_suppliers_log}
-            ></Log>
+            <div ref={logRefs.findSuppliers}>
+              <Log
+                heading_bold="Find"
+                heading_light="suppliers"
+                array={find_suppliers_log}
+              ></Log>
+            </div>
           )}
 
           {currentStatus > 2 && (
-            <Log
-              heading_bold="Update"
-              heading_light="buying lines"
-              array={find_suppliers_log}
-            ></Log>
+            <div ref={logRefs.updateBuyingLines}>
+              <Log
+                heading_bold="Update"
+                heading_light="buying lines"
+                array={find_suppliers_log}
+              ></Log>
+            </div>
           )}
 
           {currentStatus > 3 && (
-           
+            <div ref={logRefs.calculateSellingPrices}>
               <Log
                 heading_bold="Calculate"
                 heading_light="selling prices"
                 array={find_suppliers_log}
               ></Log>
-         
+            </div>
           )}
 
           {currentStatus > 4 && (
-            <Log
-              heading_bold="Assemble"
-              heading_light="email details"
-              array={find_suppliers_log}
-            ></Log>
+            <div ref={logRefs.assembleEmailDetails}>
+              <Log
+                heading_bold="Assemble"
+                heading_light="email details"
+                array={find_suppliers_log}
+              ></Log>
+            </div>
           )}
 
           {currentStatus > 5 && (
-            <Log
-              heading_bold="Generate"
-              heading_light="customer email"
-              array={find_suppliers_log}
-            ></Log>
+            <div ref={logRefs.generateCustomerEmail}>
+              <Log
+                heading_bold="Generate"
+                heading_light="customer email"
+                array={find_suppliers_log}
+              ></Log>
+            </div>
           )}
 
           {currentStatus > 6 && (
-            <Log
-              heading_bold="Send"
-              heading_light="customer email"
-              array={find_suppliers_log}
-            ></Log>
+            <div ref={logRefs.sendCustomerEmail}>
+              <Log
+                heading_bold="Send"
+                heading_light="customer email"
+                array={find_suppliers_log}
+              ></Log>
+            </div>
           )}
         </div>
       </div>
