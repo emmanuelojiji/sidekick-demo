@@ -11,6 +11,7 @@ import Header from "./Components/Header";
 
 function App() {
   const [currentStatus, setCurrentStatus] = useState(0);
+  const [highlightedLog, setHighlightedLog] = useState("");
 
   const [qualifyWebEnquiryLog, setQualifyWebEnquiryLog] = useState(
     qualify_web_enquiry_log
@@ -55,12 +56,19 @@ function App() {
     }, 3000);
   }, []);
 
-  const scrollToLog = (log) => {
-    if (log.current) {
-      log.current.scrollIntoView({
+  const scrollToLog = (logRef, logName) => {
+    if (logRef.current) {
+      logRef.current.scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
+
+     setTimeout(() => {
+      setHighlightedLog(logName);
+     }, 200);
+      
+
+     
     }
   };
 
@@ -93,7 +101,9 @@ function App() {
           <div className="step-container">
             <div className="progress-bar"></div>
             <Step
-              onClick={() => scrollToLog(logRefs.qualifyWebEnquiryRef)}
+              onClick={() =>
+                scrollToLog(logRefs.qualifyWebEnquiryRef, "qualify_web_enquiry")
+              }
               heading="Qualify"
               subheading="web enquiry"
               background={currentStatus > 0 && "#479f6d"}
@@ -119,7 +129,9 @@ function App() {
             />
 
             <Step
-              onClick={() => scrollToLog(logRefs.findSuppliers)}
+              onClick={() =>
+                scrollToLog(logRefs.findSuppliers, "find_suppliers")
+              }
               heading="Find"
               subheading="suppliers"
               background={currentStatus > 1 && "#479f6d"}
@@ -160,7 +172,9 @@ function App() {
               }
             />
             <Step
-              onClick={() => scrollToLog(logRefs.updateBuyingLines)}
+              onClick={() =>
+                scrollToLog(logRefs.updateBuyingLines, "update_buying_lines")
+              }
               heading="Update"
               subheading="buying lines"
               background={currentStatus > 2 && "#479f6d"}
@@ -208,7 +222,12 @@ function App() {
               }
             />
             <Step
-              onClick={() => scrollToLog(logRefs.calculateSellingPrices)}
+              onClick={() =>
+                scrollToLog(
+                  logRefs.calculateSellingPrices,
+                  "calculate_selling_prices"
+                )
+              }
               heading="Calculate"
               subheading="selling prices"
               background={currentStatus > 3 && "#479f6d"}
@@ -245,7 +264,12 @@ function App() {
               }
             />
             <Step
-              onClick={() => scrollToLog(logRefs.assembleEmailDetails)}
+              onClick={() =>
+                scrollToLog(
+                  logRefs.assembleEmailDetails,
+                  "assemble_email_details"
+                )
+              }
               heading="Assemble"
               subheading="Email Details"
               background={currentStatus > 4 && "#479f6d"}
@@ -285,7 +309,12 @@ function App() {
               }
             />
             <Step
-              onClick={() => scrollToLog(logRefs.generateCustomerEmail)}
+              onClick={() =>
+                scrollToLog(
+                  logRefs.generateCustomerEmail,
+                  "generate_customer_email"
+                )
+              }
               heading="Generate"
               subheading="customer email"
               background={currentStatus > 5 && "#479f6d"}
@@ -316,7 +345,9 @@ function App() {
               }
             />
             <Step
-              onClick={() => scrollToLog(logRefs.sendCustomerEmail)}
+              onClick={() =>
+                scrollToLog(logRefs.sendCustomerEmail, "send_customer_email")
+              }
               heading="Send"
               subheading="customer email"
               background={currentStatus > 6 && "#479f6d"}
@@ -354,6 +385,8 @@ function App() {
                 heading_bold="Qualify"
                 heading_light="web enquiry"
                 array={qualifyWebEnquiryLog}
+                highlightedLog={highlightedLog}
+                logName="qualify_web_enquiry"
               ></Log>
             </div>
           )}
@@ -364,6 +397,8 @@ function App() {
                 heading_bold="Find"
                 heading_light="suppliers"
                 array={find_suppliers_log}
+                logName="find_suppliers"
+                highlightedLog={highlightedLog}
               ></Log>
             </div>
           )}
@@ -371,9 +406,11 @@ function App() {
           {currentStatus > 2 && (
             <div ref={logRefs.updateBuyingLines}>
               <Log
+                logName="update_buying_lines"
                 heading_bold="Update"
                 heading_light="buying lines"
                 array={find_suppliers_log}
+                highlightedLog={highlightedLog}
               ></Log>
             </div>
           )}
@@ -381,9 +418,11 @@ function App() {
           {currentStatus > 3 && (
             <div ref={logRefs.calculateSellingPrices}>
               <Log
+                logName="calculate_selling_prices"
                 heading_bold="Calculate"
                 heading_light="selling prices"
                 array={find_suppliers_log}
+                highlightedLog={highlightedLog}
               ></Log>
             </div>
           )}
@@ -391,9 +430,11 @@ function App() {
           {currentStatus > 4 && (
             <div ref={logRefs.assembleEmailDetails}>
               <Log
+                logName="assemble_email_details"
                 heading_bold="Assemble"
                 heading_light="email details"
                 array={find_suppliers_log}
+                highlightedLog={highlightedLog}
               ></Log>
             </div>
           )}
@@ -401,9 +442,11 @@ function App() {
           {currentStatus > 5 && (
             <div ref={logRefs.generateCustomerEmail}>
               <Log
+                logName="generate_customer_email"
                 heading_bold="Generate"
                 heading_light="customer email"
                 array={find_suppliers_log}
+                highlightedLog={highlightedLog}
               ></Log>
             </div>
           )}
@@ -411,9 +454,11 @@ function App() {
           {currentStatus > 6 && (
             <div ref={logRefs.sendCustomerEmail}>
               <Log
+                logName="send_customer_email"
                 heading_bold="Send"
                 heading_light="customer email"
                 array={find_suppliers_log}
+                highlightedLog={highlightedLog}
               ></Log>
             </div>
           )}
