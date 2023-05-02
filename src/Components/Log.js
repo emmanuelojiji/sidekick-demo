@@ -1,7 +1,8 @@
 import "./Log.scss";
-import ChatBubble from "./ChatBubble";
+import ChatBubbleTypewriter from "./ChatBubbleTypewriter";
 import Typewriter from "typewriter-effect";
 import { useRef, useEffect } from "react";
+import ChatBubbleDefault from "./ChatBubbleDefault";
 
 const Log = ({
   heading_bold,
@@ -30,10 +31,27 @@ const Log = ({
         <h2 className="heading-bold">
           {heading_bold} <span className="heading-light">{heading_light}</span>
         </h2>
+
         <div className="chat-bubble-container">
-          {array.map((log) => (
-            <ChatBubble log={log} displayDetails={displayDetails} />
-          ))}
+          {array
+            .filter((log) => log.complete)
+            .map((log) => (
+              <ChatBubbleDefault
+                key={log.id}
+                log={log}
+                displayDetails={displayDetails}
+              />
+            ))}
+
+          {array
+            .filter((log) => log.complete == false)
+            .map((log) => (
+              <ChatBubbleTypewriter
+                key={log.id}
+                log={log}
+                displayDetails={displayDetails}
+              />
+            ))}
         </div>
       </div>
     </div>

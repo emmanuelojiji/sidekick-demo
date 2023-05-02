@@ -3,7 +3,7 @@ import { useState } from "react";
 import Typewriter from "typewriter-effect";
 import avatar from "../Media/sidekick-avatar.svg";
 
-const ChatBubble = ({
+const ChatBubbleDefault = ({
   message,
   details,
   displayDetails,
@@ -17,17 +17,7 @@ const ChatBubble = ({
         <div className="chat-bubble-wrap">
           <div className="chat-bubble">
             <img src={avatar} className="avatar"/>
-            {
-              <Typewriter
-                options={{
-                  strings: log.message,
-                  autoStart: true,
-                  loop: false,
-                  cursor: "",
-                  delay: 50,
-                }}
-              />
-            }
+            {log.message}
           </div>
           <p className="time">10:30</p>
           <p
@@ -69,4 +59,4 @@ const ChatBubble = ({
   );
 };
 
-export default ChatBubble;
+export default ChatBubbleDefault;

@@ -3,9 +3,9 @@ import JobInfo from "./Components/JobInfo";
 import ProgressLevel from "./Components/Step";
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Log from "./Components/Log";
-import ChatBubble from "./Components/ChatBubble";
-import { qualify_web_enquiry_log } from "./Components/Logs";
-import { find_suppliers_log } from "./Components/Logs";
+import ChatBubble from "./Components/ChatBubbleTypewriter";
+import { qualify_web_enquiry_log } from "./Components/logs_qualify_web_enquiry";
+import { find_suppliers_log } from "./Components/logs_find_suppliers";
 import Step from "./Components/Step";
 import Header from "./Components/Header";
 
@@ -17,44 +17,13 @@ function App() {
     qualify_web_enquiry_log
   );
 
-  useEffect(() => {
-    setTimeout(() => {
-      setQualifyWebEnquiryLog([
-        ...qualifyWebEnquiryLog,
-        {
-          message: "I have created this enquiry based on web enquiry 209735",
+  const [findSuplliersLog, setFindSuppliersLog] = useState(
+    find_suppliers_log
+  );
 
-          tasks: [
-            {
-              name: "Starting task",
-              time: "10:30",
-              date: "07-04-2023",
-            },
-            {
-              name: "Checking if SideKick is assigned to this enquiry",
-              time: "10:30",
-              date: "07-04-2023",
-            },
-            {
-              name: "Finding suppliers for part 434425r4",
-              time: "10:30",
-              date: "07-04-2023",
-            },
-            {
-              name: "Founding 29 possible suppliers for part 443r32r234",
-              time: "10:30",
-              date: "07-04-2023",
-            },
-            {
-              name: "Checking supplier eBay - check notes for part 447463232",
-              time: "10:30",
-              date: "07-04-2023",
-            },
-          ],
-        },
-      ]);
-    }, 3000);
-  }, []);
+  const logs = {}
+
+ 
 
   const scrollToLog = (logRef, logName) => {
     if (logRef.current) {
@@ -403,7 +372,7 @@ function App() {
               <Log
                 heading_bold="Find"
                 heading_light="suppliers"
-                array={find_suppliers_log}
+                array={findSuplliersLog}
                 logName="find_suppliers"
                 highlightedLog={highlightedLog}
               ></Log>
@@ -416,7 +385,7 @@ function App() {
                 logName="update_buying_lines"
                 heading_bold="Update"
                 heading_light="buying lines"
-                array={find_suppliers_log}
+                array={qualifyWebEnquiryLog}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -428,7 +397,7 @@ function App() {
                 logName="calculate_selling_prices"
                 heading_bold="Calculate"
                 heading_light="selling prices"
-                array={find_suppliers_log}
+                array={qualifyWebEnquiryLog}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -440,7 +409,7 @@ function App() {
                 logName="assemble_email_details"
                 heading_bold="Assemble"
                 heading_light="email details"
-                array={find_suppliers_log}
+                array={qualifyWebEnquiryLog}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -452,7 +421,7 @@ function App() {
                 logName="generate_customer_email"
                 heading_bold="Generate"
                 heading_light="customer email"
-                array={find_suppliers_log}
+                array={qualifyWebEnquiryLog}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -464,7 +433,7 @@ function App() {
                 logName="send_customer_email"
                 heading_bold="Send"
                 heading_light="customer email"
-                array={find_suppliers_log}
+                array={qualifyWebEnquiryLog}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
