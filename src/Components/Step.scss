@@ -7,9 +7,8 @@
   width: 14.2857142857%;
   z-index: 2;
   font-size: 12px;
-  
 
-  .heading{
+  .heading {
     margin-bottom: 5px;
   }
 }
@@ -17,12 +16,11 @@
 .step-container {
   display: flex;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   position: sticky;
   top: 0;
   z-index: 5;
   background: #181e27;
- 
 }
 
 .progress-bar {
@@ -42,9 +40,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
-.step-content{
+.step-content {
   width: fit-content;
   text-align: center;
+}
+
+.tick {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tick-fade-in {
+  animation: tick-fade-in 0.5s forwards linear;
+}
+
+@keyframes tick-fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+ 
+  }
 }

@@ -1,9 +1,19 @@
 import "./Step.scss";
+import tick from "../Media/icon-tick.svg";
 
-const Step = ({ heading, subheading, background, icon, onClick, cursor }) => {
+const Step = ({
+  heading,
+  subheading,
+  background,
+  icon,
+  onClick,
+  cursor,
+  showTick,
+}) => {
   return (
     <div className="Step" onClick={onClick}>
-      <div className="step-content" style={{ cursor: cursor  }}>
+      <img src={tick} className={`tick ${showTick}`} />
+      <div className="step-content" style={{ cursor: cursor }}>
         <div className="icon-container" style={{ background: background }}>
           {icon}
         </div>

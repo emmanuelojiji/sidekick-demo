@@ -108,6 +108,7 @@ function App() {
               subheading="web enquiry"
               background={currentStatus > 0 && "#479f6d"}
               cursor={currentStatus > 0 && "pointer"}
+              showTick={currentStatus > 0 && "tick-fade-in"}
               icon={
                 <svg
                   width="31"
@@ -136,6 +137,7 @@ function App() {
               subheading="suppliers"
               background={currentStatus > 1 && "#479f6d"}
               cursor={currentStatus > 1 && "pointer"}
+              showTick={currentStatus > 1 && "tick-fade-in"}
               icon={
                 <svg
                   width="33"
@@ -179,6 +181,7 @@ function App() {
               subheading="buying lines"
               background={currentStatus > 2 && "#479f6d"}
               cursor={currentStatus > 2 && "pointer"}
+              showTick={currentStatus > 2 && "tick-fade-in"}
               icon={
                 <svg
                   width="37"
@@ -232,6 +235,7 @@ function App() {
               subheading="selling prices"
               background={currentStatus > 3 && "#479f6d"}
               cursor={currentStatus > 3 && "pointer"}
+              showTick={currentStatus > 3 && "tick-fade-in"}
               icon={
                 <svg
                   width="26"
@@ -274,6 +278,7 @@ function App() {
               subheading="Email Details"
               background={currentStatus > 4 && "#479f6d"}
               cursor={currentStatus > 4 && "pointer"}
+              showTick={currentStatus > 4 && "tick-fade-in"}
               icon={
                 <svg
                   width="25"
@@ -319,6 +324,7 @@ function App() {
               subheading="customer email"
               background={currentStatus > 5 && "#479f6d"}
               cursor={currentStatus > 5 && "pointer"}
+              showTick={currentStatus > 5 && "tick-fade-in"}
               icon={
                 <svg
                   width="33"
@@ -352,6 +358,7 @@ function App() {
               subheading="customer email"
               background={currentStatus > 6 && "#479f6d"}
               cursor={currentStatus > 6 && "pointer"}
+              showTick={currentStatus > 6 && "tick-fade-in"}
               icon={
                 <svg
                   width="26"
