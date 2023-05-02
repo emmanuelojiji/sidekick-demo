@@ -10,11 +10,16 @@
   background: #007bff;
   color: white;
   width: fit-content;
-  padding-top: 16px;  
-  padding-bottom: 16px;
+  min-height: 59px;
   border-radius: 500px;
-  padding-left: 40px;
+  padding-left: 11px;
   padding-right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar{
+  margin-right: 10px;
 }
 
 

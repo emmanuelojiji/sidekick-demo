@@ -1,6 +1,7 @@
 import "./ChatBubble.scss";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
+import avatar from "../Media/sidekick-avatar.svg";
 
 const ChatBubble = ({
   message,
@@ -15,6 +16,7 @@ const ChatBubble = ({
       <div className="chat-bubble-details">
         <div className="chat-bubble-wrap">
           <div className="chat-bubble">
+            <img src={avatar} className="avatar"/>
             {
               <Typewriter
                 options={{
@@ -29,7 +31,7 @@ const ChatBubble = ({
           </div>
           <p className="time">10:30</p>
           <p
-          className="show-hide"
+            className="show-hide"
             style={{ display: log.tasks.length === 0 && "none" }}
             onClick={() =>
               isDetailExpanded

@@ -20,7 +20,9 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
   return (
     <div className="JobInfo">
       <div className="job-info-left">
-        <h1>Web enquiry: <span className="light">{jobNumber}</span></h1>
+        <h1>
+          Web enquiry: <span className="light">{jobNumber}</span>
+        </h1>
         <p className="company-info">Jones and Son Logistics</p>
         <p className="company-info">Simon Jones</p>
 
@@ -62,6 +64,13 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
             setCurrentAction("in_progress");
             setHover("");
           }}
+        />
+      )}
+
+      {currentAction === "complete" && (
+        <Pause
+          onClick={() => setCurrentAction("in_progress")}
+          onMouseEnter={() => setHover("play")}
         />
       )}
     </div>
