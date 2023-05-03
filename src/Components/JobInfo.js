@@ -4,6 +4,8 @@ import { useState } from "react";
 import InProgress from "./InProgress";
 import Pause from "./Pause";
 import Resume from "./Resume";
+import Complete from "./Complete";
+
 import ProgressLevel from "./Step";
 
 const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
@@ -29,7 +31,7 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
         <p className="enquiry-added">Enquiry added 2 mins ago</p>
       </div>
 
-      {currentAction === "start" && (
+      {currentAction === "start" && currentStatus < 6 && (
         <Start
           onClick={(e) => {
             changeStatus("in_progress");
@@ -67,12 +69,7 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
         />
       )}
 
-      {currentAction === "complete" && (
-        <Pause
-          onClick={() => setCurrentAction("in_progress")}
-          onMouseEnter={() => setHover("play")}
-        />
-      )}
+      {currentStatus > 6 && <Complete />}
     </div>
   );
 };

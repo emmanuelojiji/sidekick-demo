@@ -12,7 +12,7 @@
   margin-bottom: 17px;
 }
 
-.start {
+.start, .complete {
   background: #479f6d;
   &:hover {
     background: #3d875d;
@@ -26,6 +26,8 @@
 .in-progress-icon {
   animation: spin 10s linear infinite;
 }
+
+
 
 @keyframes spin {
   0% {

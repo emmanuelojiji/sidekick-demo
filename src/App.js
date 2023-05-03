@@ -29,7 +29,7 @@ function App() {
     if (logRef.current) {
       logRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
       });
 
      setTimeout(() => {
