@@ -13,6 +13,7 @@ const ChatBubbleTypewriter = ({
   const [isDetailExpanded, setIsDetailExpanded] = useState(false);
 
   const [borderRadius, setBorderRadius] = useState(100);
+  const [padding, setPadding] = useState()
   const chatBubbleRef = useRef();
 
   useEffect(() => {
@@ -22,8 +23,10 @@ const ChatBubbleTypewriter = ({
       const height = chatBubbleRef.current.offsetHeight;
       if (height > 70) {
         setBorderRadius(20);
+        setPadding(20)
       } else {
         setBorderRadius(500);
+        setPadding(10)
       }
     });
 
@@ -47,7 +50,7 @@ const ChatBubbleTypewriter = ({
           <div
             className="chat-bubble"
             ref={chatBubbleRef}
-            style={{ borderRadius: `${borderRadius}px` }}
+            style={{ borderRadius: `${borderRadius}px`, paddingTop:`${padding}px`, paddingBottom:`${padding}px`}}
           >
             <img src={avatar} className="avatar" />
             {
