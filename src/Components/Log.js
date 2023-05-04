@@ -16,7 +16,7 @@ const Log = ({
   const logRef = useRef();
 
   useEffect(() => {
-    logRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    logRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
   }, []);
 
   return (

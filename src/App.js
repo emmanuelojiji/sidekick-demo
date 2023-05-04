@@ -9,6 +9,7 @@ import { find_suppliers_log } from "./Components/logs_find_suppliers";
 import { update_buying_lines_log } from "./Components/logs_update_buying_lines";
 import { calculate_selling_prices_log } from "./Components/logs_calculate_selling_prices";
 import { assemble_email_details_log } from "./Components/logs_assemble_email_details";
+import { send_customer_email_log } from "./Components/logs_send_customer_email";
 import Step from "./Components/Step";
 import Header from "./Components/Header";
 import { generate_customer_email_log } from "./Components/logs_generate_customer_email";
@@ -17,21 +18,10 @@ function App() {
   const [currentStatus, setCurrentStatus] = useState(0);
   const [highlightedLog, setHighlightedLog] = useState("");
 
-  const [qualifyWebEnquiryLog, setQualifyWebEnquiryLog] = useState(
-    qualify_web_enquiry_log
-  );
-
-  const [findSuplliersLog, setFindSuppliersLog] = useState(find_suppliers_log);
-
-
-
-  const logs = {};
-
   const scrollToLog = (logRef, logName) => {
     if (logRef.current) {
       logRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+        behavior: 'smooth', block: 'center'
       });
 
       setTimeout(() => {
@@ -432,7 +422,7 @@ function App() {
                 logName="send_customer_email"
                 heading_bold="Send"
                 heading_light="customer email"
-                array=""
+                array={send_customer_email_log}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
