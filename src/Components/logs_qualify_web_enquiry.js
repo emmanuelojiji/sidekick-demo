@@ -2,7 +2,14 @@ export const qualify_web_enquiry_log = [
   {
     message:
       "I have created a [new entity named TEMSA ELECTROMEX Co.,LTD](/crm/entity/516991).",
-    tasks: [],
+    tasks: [
+      {
+        name: "Task 1",
+      },
+      {
+        name: "Task 2",
+      },
+    ],
     complete: true,
   },
 
@@ -25,7 +32,14 @@ export const qualify_web_enquiry_log = [
     message:
       "I have finished qualifying [web enquiry 667549](/heap/open/web_enquiry/667549).",
 
-    tasks: [],
+    tasks: [
+      {
+        name: "Task 1",
+      },
+      {
+        name: "Task 2",
+      },
+    ],
     complete: false,
   },
 ];

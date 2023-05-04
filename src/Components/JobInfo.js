@@ -52,7 +52,7 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
         />
       )}
 
-      {currentAction === "pause" && !hover && (
+      {currentAction === "pause" && currentStatus < 7 && !hover && (
         <Pause
           onClick={() => setCurrentAction("in_progress")}
           onMouseEnter={() => setHover("play")}
