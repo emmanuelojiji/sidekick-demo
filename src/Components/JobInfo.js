@@ -31,7 +31,7 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
         <p className="enquiry-added">Enquiry added 2 mins ago</p>
       </div>
 
-      {currentAction === "start" && currentStatus < 6 && (
+      {currentAction === "start" && currentStatus < 7 && (
         <Start
           onClick={(e) => {
             changeStatus("in_progress");
@@ -41,7 +41,7 @@ const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
         />
       )}
 
-      {currentAction === "in_progress" && currentStatus < 6 && !hover && (
+      {currentAction === "in_progress" && currentStatus < 7 && !hover && (
         <InProgress onMouseEnter={() => setHover("pause")} />
       )}
 

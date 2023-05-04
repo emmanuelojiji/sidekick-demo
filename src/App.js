@@ -6,8 +6,12 @@ import Log from "./Components/Log";
 import ChatBubble from "./Components/ChatBubbleTypewriter";
 import { qualify_web_enquiry_log } from "./Components/logs_qualify_web_enquiry";
 import { find_suppliers_log } from "./Components/logs_find_suppliers";
+import { update_buying_lines_log } from "./Components/logs_update_buying_lines";
+import { calculate_selling_prices_log } from "./Components/logs_calculate_selling_prices";
+import { assemble_email_details_log } from "./Components/logs_assemble_email_details";
 import Step from "./Components/Step";
 import Header from "./Components/Header";
+import { generate_customer_email_log } from "./Components/logs_generate_customer_email";
 
 function App() {
   const [currentStatus, setCurrentStatus] = useState(0);
@@ -17,13 +21,11 @@ function App() {
     qualify_web_enquiry_log
   );
 
-  const [findSuplliersLog, setFindSuppliersLog] = useState(
-    find_suppliers_log
-  );
+  const [findSuplliersLog, setFindSuppliersLog] = useState(find_suppliers_log);
 
-  const logs = {}
 
- 
+
+  const logs = {};
 
   const scrollToLog = (logRef, logName) => {
     if (logRef.current) {
@@ -32,12 +34,9 @@ function App() {
         block: "start",
       });
 
-     setTimeout(() => {
-      setHighlightedLog(logName);
-     }, 200);
-      
-
-     
+      setTimeout(() => {
+        setHighlightedLog(logName);
+      }, 200);
     }
   };
 
@@ -360,7 +359,7 @@ function App() {
               <Log
                 heading_bold="Qualify"
                 heading_light="web enquiry"
-                array={qualifyWebEnquiryLog}
+                array={qualify_web_enquiry_log}
                 highlightedLog={highlightedLog}
                 logName="qualify_web_enquiry"
               ></Log>
@@ -372,7 +371,7 @@ function App() {
               <Log
                 heading_bold="Find"
                 heading_light="suppliers"
-                array={findSuplliersLog}
+                array={find_suppliers_log}
                 logName="find_suppliers"
                 highlightedLog={highlightedLog}
               ></Log>
@@ -385,7 +384,7 @@ function App() {
                 logName="update_buying_lines"
                 heading_bold="Update"
                 heading_light="buying lines"
-                array={qualifyWebEnquiryLog}
+                array={update_buying_lines_log}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -397,7 +396,7 @@ function App() {
                 logName="calculate_selling_prices"
                 heading_bold="Calculate"
                 heading_light="selling prices"
-                array={qualifyWebEnquiryLog}
+                array={calculate_selling_prices_log}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -409,7 +408,7 @@ function App() {
                 logName="assemble_email_details"
                 heading_bold="Assemble"
                 heading_light="email details"
-                array={qualifyWebEnquiryLog}
+                array={assemble_email_details_log}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -421,7 +420,7 @@ function App() {
                 logName="generate_customer_email"
                 heading_bold="Generate"
                 heading_light="customer email"
-                array={qualifyWebEnquiryLog}
+                array={generate_customer_email_log}
                 highlightedLog={highlightedLog}
               ></Log>
             </div>
@@ -433,7 +432,7 @@ function App() {
                 logName="send_customer_email"
                 heading_bold="Send"
                 heading_light="customer email"
-                array={qualifyWebEnquiryLog}
+                array=""
                 highlightedLog={highlightedLog}
               ></Log>
             </div>

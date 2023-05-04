@@ -5,6 +5,7 @@
   border: dashed 1px #374250;
   margin-bottom: 54px;
 
+
   animation: open 1s linear forwards;
 
   h2 {
@@ -12,6 +13,8 @@
     margin-bottom: 20px;
   }
 }
+
+
 
 .content {
   animation: fade-in 1s linear forwards;
@@ -34,7 +37,7 @@
 
   100% {
     opacity: 1;
-    max-height: 500px;
+    max-height: 5000px;
   }
 }
 
@@ -50,7 +53,6 @@
   }
 }
 
-.heading-light{
-  font-weight:100 ;
-
+.heading-light {
+  font-weight: 100;
 }

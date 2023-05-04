@@ -1,5 +1,5 @@
 import "./ChatBubble.scss";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Typewriter from "typewriter-effect";
 import avatar from "../Media/sidekick-avatar.svg";
 
@@ -11,12 +11,45 @@ const ChatBubbleTypewriter = ({
   displayControls,
 }) => {
   const [isDetailExpanded, setIsDetailExpanded] = useState(false);
+
+  const [borderRadius, setBorderRadius] = useState(100);
+  const chatBubbleRef = useRef();
+
+  useEffect(() => {
+    // Create a new MutationObserver instance
+    const observer = new MutationObserver((mutations) => {
+      // Check if any mutations affect the height of the chat bubble
+      const height = chatBubbleRef.current.offsetHeight;
+      if (height > 70) {
+        setBorderRadius(20);
+      } else {
+        setBorderRadius(500);
+      }
+    });
+
+    // Observe mutations on the chat bubble
+    observer.observe(chatBubbleRef.current, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+    });
+
+    // Cleanup function to disconnect the observer when the component unmounts
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <div className="chat-bubble-details">
         <div className="chat-bubble-wrap">
-          <div className="chat-bubble">
-            <img src={avatar} className="avatar"/>
+          <div
+            className="chat-bubble"
+            ref={chatBubbleRef}
+            style={{ borderRadius: `${borderRadius}px` }}
+          >
+            <img src={avatar} className="avatar" />
             {
               <Typewriter
                 options={{
