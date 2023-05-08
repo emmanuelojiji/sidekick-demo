@@ -13,7 +13,7 @@ const ChatBubbleTypewriter = ({
   const [isDetailExpanded, setIsDetailExpanded] = useState(false);
 
   const [borderRadius, setBorderRadius] = useState(100);
-  const [padding, setPadding] = useState()
+  const [padding, setPadding] = useState();
   const chatBubbleRef = useRef();
 
   useEffect(() => {
@@ -23,10 +23,10 @@ const ChatBubbleTypewriter = ({
       const height = chatBubbleRef.current.offsetHeight;
       if (height > 70) {
         setBorderRadius(20);
-        setPadding(20)
+        setPadding(20);
       } else {
         setBorderRadius(500);
-        setPadding(10)
+        setPadding(10);
       }
     });
 
@@ -45,25 +45,22 @@ const ChatBubbleTypewriter = ({
 
   return (
     <>
-      <div className="chat-bubble-details">
-        <div className="chat-bubble-wrap">
+      <div
+        className="chat-bubble-details chat-bubble-animation"
+        style={{ transform: "scale(0)", maxHeight: "0" }}
+      >
+        <div className="chat-bubble-wrap ">
           <div
             className="chat-bubble"
             ref={chatBubbleRef}
-            style={{ borderRadius: `${borderRadius}px`, paddingTop:`${padding}px`, paddingBottom:`${padding}px`}}
+            style={{
+              borderRadius: `${borderRadius}px`,
+              paddingTop: `${padding}px`,
+              paddingBottom: `${padding}px`,
+            }}
           >
             <img src={avatar} className="avatar" />
-            {
-              <Typewriter
-                options={{
-                  strings: log.message,
-                  autoStart: true,
-                  loop: false,
-                  cursor: "",
-                  delay: 50,
-                }}
-              />
-            }
+            {message}
           </div>
           <p className="time">10:30</p>
           <p

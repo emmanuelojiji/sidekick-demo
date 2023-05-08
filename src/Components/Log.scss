@@ -4,9 +4,9 @@
   border-radius: 40px;
   border: dashed 1px #374250;
   margin-bottom: 54px;
+  transition: 0.5s ease-in-out;
 
-
-  animation: open 1s linear forwards;
+  animation: open 3s linear forwards;
 
   h2 {
     color: white;
@@ -14,11 +14,8 @@
   }
 }
 
-
-
 .content {
-  animation: fade-in 1s linear forwards;
-  animation-delay: 0.1s;
+  animation: fade-in 1s forwards;
   opacity: 0;
   visibility: hidden;
   padding: 50px;

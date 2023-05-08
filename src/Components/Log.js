@@ -50,6 +50,7 @@ const Log = ({
                 key={log.id}
                 log={log}
                 displayDetails={displayDetails}
+                message={log.message}
               />
             ))}
         </div>
