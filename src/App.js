@@ -21,7 +21,8 @@ function App() {
   const scrollToLog = (logRef, logName) => {
     if (logRef.current) {
       logRef.current.scrollIntoView({
-        behavior: 'smooth', block: 'center'
+        behavior: "smooth",
+        block: "center",
       });
 
       setTimeout(() => {
@@ -344,89 +345,91 @@ function App() {
             />
           </div>
 
-          {currentStatus > 0 && (
-            <div ref={logRefs.qualifyWebEnquiryRef}>
-              <Log
-                heading_bold="Qualify"
-                heading_light="web enquiry"
-                array={qualify_web_enquiry_log}
-                highlightedLog={highlightedLog}
-                logName="qualify_web_enquiry"
-              ></Log>
-            </div>
-          )}
+          <div className="log-container">
+            {currentStatus > 0 && (
+              <div ref={logRefs.qualifyWebEnquiryRef}>
+                <Log
+                  heading_bold="Qualify"
+                  heading_light="web enquiry"
+                  array={qualify_web_enquiry_log}
+                  highlightedLog={highlightedLog}
+                  logName="qualify_web_enquiry"
+                ></Log>
+              </div>
+            )}
 
-          {currentStatus > 1 && (
-            <div ref={logRefs.findSuppliers}>
-              <Log
-                heading_bold="Find"
-                heading_light="suppliers"
-                array={find_suppliers_log}
-                logName="find_suppliers"
-                highlightedLog={highlightedLog}
-              ></Log>
-            </div>
-          )}
+            {currentStatus > 1 && (
+              <div ref={logRefs.findSuppliers}>
+                <Log
+                  heading_bold="Find"
+                  heading_light="suppliers"
+                  array={find_suppliers_log}
+                  logName="find_suppliers"
+                  highlightedLog={highlightedLog}
+                ></Log>
+              </div>
+            )}
 
-          {currentStatus > 2 && (
-            <div ref={logRefs.updateBuyingLines}>
-              <Log
-                logName="update_buying_lines"
-                heading_bold="Update"
-                heading_light="buying lines"
-                array={update_buying_lines_log}
-                highlightedLog={highlightedLog}
-              ></Log>
-            </div>
-          )}
+            {currentStatus > 2 && (
+              <div ref={logRefs.updateBuyingLines}>
+                <Log
+                  logName="update_buying_lines"
+                  heading_bold="Update"
+                  heading_light="buying lines"
+                  array={update_buying_lines_log}
+                  highlightedLog={highlightedLog}
+                ></Log>
+              </div>
+            )}
 
-          {currentStatus > 3 && (
-            <div ref={logRefs.calculateSellingPrices}>
-              <Log
-                logName="calculate_selling_prices"
-                heading_bold="Calculate"
-                heading_light="selling prices"
-                array={calculate_selling_prices_log}
-                highlightedLog={highlightedLog}
-              ></Log>
-            </div>
-          )}
+            {currentStatus > 3 && (
+              <div ref={logRefs.calculateSellingPrices}>
+                <Log
+                  logName="calculate_selling_prices"
+                  heading_bold="Calculate"
+                  heading_light="selling prices"
+                  array={calculate_selling_prices_log}
+                  highlightedLog={highlightedLog}
+                ></Log>
+              </div>
+            )}
 
-          {currentStatus > 4 && (
-            <div ref={logRefs.assembleEmailDetails}>
-              <Log
-                logName="assemble_email_details"
-                heading_bold="Assemble"
-                heading_light="email details"
-                array={assemble_email_details_log}
-                highlightedLog={highlightedLog}
-              ></Log>
-            </div>
-          )}
+            {currentStatus > 4 && (
+              <div ref={logRefs.assembleEmailDetails}>
+                <Log
+                  logName="assemble_email_details"
+                  heading_bold="Assemble"
+                  heading_light="email details"
+                  array={assemble_email_details_log}
+                  highlightedLog={highlightedLog}
+                ></Log>
+              </div>
+            )}
 
-          {currentStatus > 5 && (
-            <div ref={logRefs.generateCustomerEmail}>
-              <Log
-                logName="generate_customer_email"
-                heading_bold="Generate"
-                heading_light="customer email"
-                array={generate_customer_email_log}
-                highlightedLog={highlightedLog}
-              ></Log>
-            </div>
-          )}
+            {currentStatus > 5 && (
+              <div ref={logRefs.generateCustomerEmail}>
+                <Log
+                  logName="generate_customer_email"
+                  heading_bold="Generate"
+                  heading_light="customer email"
+                  array={generate_customer_email_log}
+                  highlightedLog={highlightedLog}
+                ></Log>
+              </div>
+            )}
 
-          {currentStatus > 6 && (
-            <div ref={logRefs.sendCustomerEmail}>
-              <Log
-                logName="send_customer_email"
-                heading_bold="Send"
-                heading_light="customer email"
-                array={send_customer_email_log}
-                highlightedLog={highlightedLog}
-              ></Log>
-            </div>
-          )}
+            {currentStatus > 6 && (
+              <div ref={logRefs.sendCustomerEmail}>
+                <Log
+                  logName="send_customer_email"
+                  heading_bold="Send"
+                  heading_light="customer email"
+                  array={send_customer_email_log}
+                  highlightedLog={highlightedLog}
+                ></Log>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
