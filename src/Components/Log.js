@@ -12,11 +12,21 @@ const Log = ({
   modalRef,
   highlightedLog,
   logName,
+  stepsRef
 }) => {
   const logRef = useRef();
 
   useEffect(() => {
-    logRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (logRef.current) {
+      const modal = logRef.current.closest(".modal");
+      const stepsHeight = stepsRef.current.offsetHeight;
+      const targetPosition = logRef.current.offsetTop - stepsHeight - 50;
+
+      modal.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
   }, []);
 
   return (

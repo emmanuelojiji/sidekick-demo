@@ -360,6 +360,7 @@ function App() {
                   array={qualify_web_enquiry_log}
                   highlightedLog={highlightedLog}
                   logName="qualify_web_enquiry"
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
@@ -372,6 +373,7 @@ function App() {
                   array={find_suppliers_log}
                   logName="find_suppliers"
                   highlightedLog={highlightedLog}
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
@@ -384,6 +386,7 @@ function App() {
                   heading_light="buying lines"
                   array={update_buying_lines_log}
                   highlightedLog={highlightedLog}
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
@@ -396,6 +399,7 @@ function App() {
                   heading_light="selling prices"
                   array={calculate_selling_prices_log}
                   highlightedLog={highlightedLog}
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
@@ -408,6 +412,7 @@ function App() {
                   heading_light="email details"
                   array={assemble_email_details_log}
                   highlightedLog={highlightedLog}
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
@@ -420,6 +425,7 @@ function App() {
                   heading_light="customer email"
                   array={generate_customer_email_log}
                   highlightedLog={highlightedLog}
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
@@ -432,6 +438,7 @@ function App() {
                   heading_light="customer email"
                   array={send_customer_email_log}
                   highlightedLog={highlightedLog}
+                  stepsRef={stepsRef}
                 ></Log>
               </div>
             )}
