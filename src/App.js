@@ -18,11 +18,17 @@ function App() {
   const [currentStatus, setCurrentStatus] = useState(0);
   const [highlightedLog, setHighlightedLog] = useState("");
 
+  const stepsRef = useRef();
+
   const scrollToLog = (logRef, logName) => {
     if (logRef.current) {
-      logRef.current.scrollIntoView({
+      const modal = logRef.current.closest(".modal");
+      const stepsHeight = stepsRef.current.offsetHeight;
+      const targetPosition = logRef.current.offsetTop - stepsHeight - 50;
+
+      modal.scrollTo({
+        top: targetPosition,
         behavior: "smooth",
-        block: "center",
       });
 
       setTimeout(() => {
@@ -57,7 +63,7 @@ function App() {
             jobNumber="209735"
           />
 
-          <div className="step-container">
+          <div className="step-container" ref={stepsRef}>
             <div className="progress-bar"></div>
             <Step
               onClick={() =>
