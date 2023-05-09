@@ -7,6 +7,7 @@
   width: 14.2857142857%;
   z-index: 2;
   font-size: 12px;
+  position: relative;
 
   .heading {
     margin-bottom: 5px;
@@ -23,11 +24,19 @@
   background: #181e27;
 }
 
-.progress-bar {
-  width: 20%;
-  position: absolute;
+.progress-outer {
   height: 4px;
-  top: 35%;
+  width: 100%;
+  background: #0d141c;
+  position: absolute;
+  top: 45%;
+  z-index: -1;
+  .progress-inner {
+    height: 100%;
+    width: 100%;
+   
+    width: 0%;
+  }
 }
 
 .icon-container {
@@ -61,12 +70,23 @@
   0% {
     opacity: 0;
     visibility: hidden;
-  
   }
 
   100% {
     opacity: 1;
     visibility: visible;
- 
+  }
+}
+
+.progressed {
+  animation: progressed 0.5s forwards;
+  @keyframes progressed {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 100%;
+    }
   }
 }

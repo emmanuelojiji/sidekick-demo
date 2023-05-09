@@ -92,6 +92,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor={currentStatus < 2 ? "linear-gradient(to right, #1f8942, #0d141c)" : "#1f8942"}
+              progressed={currentStatus > 0 && "progressed"}
             />
 
             <Step
@@ -137,6 +139,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor="#1f8942"
+              progressed={currentStatus > 1 && "progressed"}
             />
             <Step
               onClick={() =>
@@ -188,6 +192,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor="#1f8942"
+              progressed={currentStatus > 2 && "progressed"}
             />
             <Step
               onClick={() =>
@@ -231,6 +237,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor="#1f8942"
+              progressed={currentStatus > 3 && "progressed"}
             />
             <Step
               onClick={() =>
@@ -277,6 +285,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor="#1f8942"
+              progressed={currentStatus > 4 && "progressed"}
             />
             <Step
               onClick={() =>
@@ -314,6 +324,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor="#1f8942"
+              progressed={currentStatus > 5 && "progressed"}
             />
             <Step
               onClick={() =>
@@ -348,6 +360,8 @@ function App() {
                   </g>
                 </svg>
               }
+              progressBarColor="#1f8942"
+              progressed={currentStatus > 6 && "progressed"}
             />
           </div>
 
