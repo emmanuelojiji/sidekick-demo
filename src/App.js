@@ -92,7 +92,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor={currentStatus < 2 ? "linear-gradient(to right, #1f8942, #0d141c)" : "#1f8942"}
+              progressBarColor={
+                currentStatus < 2
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 0 && "progressed"}
             />
 
@@ -139,7 +143,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor="#1f8942"
+              progressBarColor={
+                currentStatus < 3
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 1 && "progressed"}
             />
             <Step
@@ -192,7 +200,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor="#1f8942"
+              progressBarColor={
+                currentStatus < 4
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 2 && "progressed"}
             />
             <Step
@@ -237,7 +249,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor="#1f8942"
+              progressBarColor={
+                currentStatus < 5
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 3 && "progressed"}
             />
             <Step
@@ -285,7 +301,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor="#1f8942"
+              progressBarColor={
+                currentStatus < 6
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 4 && "progressed"}
             />
             <Step
@@ -324,7 +344,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor="#1f8942"
+              progressBarColor={
+                currentStatus < 7
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 5 && "progressed"}
             />
             <Step
@@ -360,7 +384,11 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor="#1f8942"
+              progressBarColor={
+                currentStatus < 8
+                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
+                  : "#1f8942"
+              }
               progressed={currentStatus > 6 && "progressed"}
             />
           </div>
