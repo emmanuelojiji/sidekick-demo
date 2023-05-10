@@ -384,11 +384,7 @@ function App() {
                   </g>
                 </svg>
               }
-              progressBarColor={
-                currentStatus < 8
-                  ? "linear-gradient(90deg, rgba(31,137,66,1) 0%, rgba(31,137,66,1) 70%, rgba(13,20,28,1) 100%)"
-                  : "#1f8942"
-              }
+              progressBarColor="#1f8942"
               progressed={currentStatus > 6 && "progressed"}
             />
           </div>
