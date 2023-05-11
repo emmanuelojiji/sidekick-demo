@@ -10,7 +10,7 @@ const Step = ({
   cursor,
   showTick,
   progressed,
-  progressBarColor
+  progressBarColor,
 }) => {
   return (
     <div className="Step" onClick={onClick}>
@@ -22,7 +22,7 @@ const Step = ({
       </div>
       <img src={tick} className={`tick ${showTick}`} />
       <div className="step-content" style={{ cursor: cursor }}>
-        <div className="icon-container" style={{background}}>
+        <div className="icon-container" style={{ background }}>
           {icon}
         </div>
         <h3 className="heading">{heading}</h3>

@@ -9,8 +9,9 @@ const ChatBubbleTypewriter = ({
   displayDetails,
   log,
   displayControls,
+  showDetails,
 }) => {
-  const [isDetailExpanded, setIsDetailExpanded] = useState(false);
+
 
   const [borderRadius, setBorderRadius] = useState(100);
   const [padding, setPadding] = useState();
@@ -63,26 +64,15 @@ const ChatBubbleTypewriter = ({
             {message}
           </div>
           <p className="time">10:30</p>
-          <p
-            className="show-hide"
-            style={{ display: log.tasks.length === 0 && "none" }}
-            onClick={() =>
-              isDetailExpanded
-                ? setIsDetailExpanded(false)
-                : setIsDetailExpanded(true)
-            }
-          >
-            {isDetailExpanded ? "Hide details" : "Show details"}
-          </p>
         </div>
 
         <div
           className={`details ${
-            isDetailExpanded ? "details-expand" : "details-collapse"
+            showDetails? "details-expand" : "details-collapse"
           }`}
           style={{
             display: displayDetails,
-            marginTop: isDetailExpanded && "30px",
+            marginTop: showDetails && "30px",
           }}
         >
           <div className="details-wrap">

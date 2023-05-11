@@ -1,7 +1,7 @@
 import "./Log.scss";
 import ChatBubbleTypewriter from "./ChatBubbleTypewriter";
 import Typewriter from "typewriter-effect";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import ChatBubbleDefault from "./ChatBubbleDefault";
 
 const Log = ({
@@ -12,7 +12,7 @@ const Log = ({
   modalRef,
   highlightedLog,
   logName,
-  stepsRef
+  stepsRef,
 }) => {
   const logRef = useRef();
 
@@ -29,6 +29,8 @@ const Log = ({
     }
   }, []);
 
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <div
       className="Log"
@@ -38,9 +40,19 @@ const Log = ({
       }}
     >
       <div className="content">
+
+        <div className="log-header">
         <h2 className="heading-bold">
           {heading_bold} <span className="heading-light">{heading_light}</span>
         </h2>
+
+        <p
+          className="show-hide"
+          onClick={() => (showDetails ? setShowDetails(false) : setShowDetails(true))}
+        >
+          {showDetails ? "Hide details" : "Show details"}
+        </p>
+        </div>
 
         <div className="chat-bubble-container">
           {array
@@ -50,6 +62,7 @@ const Log = ({
                 key={log.id}
                 log={log}
                 displayDetails={displayDetails}
+                showDetails={showDetails}
               />
             ))}
 
@@ -61,6 +74,7 @@ const Log = ({
                 log={log}
                 displayDetails={displayDetails}
                 message={log.message}
+                showDetails={showDetails}
               />
             ))}
         </div>

@@ -12,6 +12,12 @@
     color: white;
     margin-bottom: 20px;
   }
+
+  .log-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .content {
@@ -53,3 +59,16 @@
 .heading-light {
   font-weight: 100;
 }
+
+.show-hide {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: #003e80;
+  }
+}
+
