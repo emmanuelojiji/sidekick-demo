@@ -10,13 +10,13 @@
   color: white;
   width: fit-content;
   min-height: 59px;
-  border-radius: 500px;
   padding-left: 11px;
   padding-right: 40px;
   display: flex; 
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-radius: 500px;
 }
 
 .chat-bubble-animation{
@@ -40,44 +40,7 @@
 }
 
 
-.details {
-  max-height: 0px;
-  background: #2a313a;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: 0.3s ease-in-out;
-  color: #dadada;
-  overflow-y: scroll;
 
-  .details-wrap {
-    padding: 20px;
-  }
-
-  &:empty {
-    display: none;
-  }
-}
-
-.details-expand {
-  max-height: 170px;
-}
-
-.details-collapse {
-  max-height: 0px;
-}
-
-.details-row {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.details-row-right {
-  display: flex;
-}
 
 .chat-content-wrap {
   background: pink;

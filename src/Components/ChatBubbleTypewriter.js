@@ -11,8 +11,6 @@ const ChatBubbleTypewriter = ({
   displayControls,
   showDetails,
 }) => {
-
-
   const [borderRadius, setBorderRadius] = useState(100);
   const [padding, setPadding] = useState();
   const chatBubbleRef = useRef();
@@ -66,27 +64,7 @@ const ChatBubbleTypewriter = ({
           <p className="time">10:30</p>
         </div>
 
-        <div
-          className={`details ${
-            showDetails? "details-expand" : "details-collapse"
-          }`}
-          style={{
-            display: displayDetails,
-            marginTop: showDetails && "30px",
-          }}
-        >
-          <div className="details-wrap">
-            {log.tasks.map((task) => (
-              <div className="details-row">
-                <p>{task.name}</p>
-                <div className="details-row-right">
-                  <p>{task.time}</p>
-                  <p>{task.date}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      
       </div>
     </>
   );

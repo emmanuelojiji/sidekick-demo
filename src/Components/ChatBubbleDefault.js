@@ -9,41 +9,17 @@ const ChatBubbleDefault = ({
   displayDetails,
   log,
   displayControls,
-  showDetails
+  showDetails,
 }) => {
-  
   return (
     <>
       <div className="chat-bubble-details">
         <div className="chat-bubble-wrap">
           <div className="chat-bubble">
-            <img src={avatar} className="avatar"/>
+            <img src={avatar} className="avatar" />
             {log.message}
           </div>
           <p className="time">10:30</p>
-         
-        </div>
-
-        <div
-          className={`details ${
-            showDetails ? "details-expand" : "details-collapse"
-          }`}
-          style={{
-            display: displayDetails,
-            marginTop: showDetails && "30px",
-          }}
-        >
-          <div className="details-wrap">
-            {log.tasks.map((task) => (
-              <div className="details-row">
-                <p>{task.name}</p>
-                <div className="details-row-right">
-                  <p>{task.time}</p>
-                  <p>{task.date}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </>

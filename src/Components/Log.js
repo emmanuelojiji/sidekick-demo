@@ -40,18 +40,46 @@ const Log = ({
       }}
     >
       <div className="content">
-
         <div className="log-header">
-        <h2 className="heading-bold">
-          {heading_bold} <span className="heading-light">{heading_light}</span>
-        </h2>
+          <h2 className="heading-bold">
+            {heading_bold}{" "}
+            <span className="heading-light">{heading_light}</span>
+          </h2>
 
-        <p
-          className="show-hide"
-          onClick={() => (showDetails ? setShowDetails(false) : setShowDetails(true))}
+          <p
+            className="show-hide"
+            onClick={() =>
+              showDetails ? setShowDetails(false) : setShowDetails(true)
+            }
+          >
+            {showDetails ? "Hide details" : "Show details"}
+          </p>
+        </div>
+
+        <div
+          className={`details ${
+            showDetails ? "details-expand" : "details-collapse"
+          }`} 
+          style={{
+            display: displayDetails,
+            marginTop: showDetails && "30px",
+          }}
         >
-          {showDetails ? "Hide details" : "Show details"}
-        </p>
+          <div className="details-wrap">
+            {array.map((log) => (
+              <div key={log.message}>
+                {log.events.map((event, index) => (
+                  <div className="details-row" key={index}>
+                    <p>{event}</p>
+                    <div className="details-row-right">
+                      <p>{event.time}</p>
+                      <p>{event.date}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="chat-bubble-container">
