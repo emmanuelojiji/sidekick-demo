@@ -1,18 +1,132 @@
-import "./Log.scss";
 import ChatBubbleTypewriter from "./ChatBubbleTypewriter";
-import Typewriter from "typewriter-effect";
 import { useRef, useEffect, useState } from "react";
 import ChatBubbleDefault from "./ChatBubbleDefault";
+import { styled } from "styled-components";
+
+const LogContainer = styled.div`
+  width: 100%;
+  background: #08101a;
+  border-radius: 40px;
+  border: dashed 1px #374250;
+  margin-bottom: 54px;
+  transition: 0.5s ease-in-out;
+
+  animation: open 3s linear forwards;
+
+  h2 {
+    color: white;
+  }
+
+  .log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    animation: fade-in 1s forwards;
+    opacity: 0;
+    visibility: hidden;
+    padding: 50px;
+  }
+
+  .chat-bubble-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @keyframes open {
+    0% {
+      opacity: 0;
+      max-height: 0;
+    }
+
+    100% {
+      opacity: 1;
+      max-height: 5000px;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .heading-light {
+    font-weight: 100;
+  }
+
+  .show-hide {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: #003e80;
+    }
+  }
+
+  .details {
+    max-height: 0px;
+    background: #2a313a;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+    color: #dadada;
+    overflow-y: scroll;
+    font-size: 15px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+
+    .details-wrap {
+      padding: 20px;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .details-expand {
+    max-height: 170px;
+  }
+
+  .details-collapse {
+    max-height: 0px;
+  }
+
+  .details-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  .details-row-right {
+    display: flex;
+  }
+`;
 
 const Log = ({
   heading_bold,
   heading_light,
   array,
   displayDetails,
-  modalRef,
   highlightedLog,
   logName,
   stepsRef,
+  borderRadius
 }) => {
   const logRef = useRef();
 
@@ -32,7 +146,7 @@ const Log = ({
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div
+    <LogContainer
       className="Log"
       ref={logRef}
       style={{
@@ -59,7 +173,7 @@ const Log = ({
         <div
           className={`details ${
             showDetails ? "details-expand" : "details-collapse"
-          }`} 
+          }`}
           style={{
             display: displayDetails,
             marginTop: showDetails && "30px",
@@ -91,6 +205,7 @@ const Log = ({
                 log={log}
                 displayDetails={displayDetails}
                 showDetails={showDetails}
+            
               />
             ))}
 
@@ -103,11 +218,12 @@ const Log = ({
                 displayDetails={displayDetails}
                 message={log.message}
                 showDetails={showDetails}
+             
               />
             ))}
         </div>
       </div>
-    </div>
+    </LogContainer>
   );
 };
 

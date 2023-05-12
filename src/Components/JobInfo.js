@@ -6,14 +6,10 @@ import Pause from "./Pause";
 import Resume from "./Resume";
 import Complete from "./Complete";
 
-import ProgressLevel from "./Step";
-
 const JobInfo = ({ currentStatus, setCurrentStatus, jobNumber }) => {
   const [currentAction, setCurrentAction] = useState("start");
-  const [isHovered, setIsHovered] = useState(false);
 
   const [hover, setHover] = useState("");
-  const [showPlay, setShowPlay] = useState(false);
 
   const changeStatus = (status) => {
     setCurrentAction(status);

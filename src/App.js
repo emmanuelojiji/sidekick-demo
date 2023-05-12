@@ -1,9 +1,6 @@
-import "./App.scss";
 import JobInfo from "./Components/JobInfo";
-import ProgressLevel from "./Components/Step";
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef } from "react";
 import Log from "./Components/Log";
-import ChatBubble from "./Components/ChatBubbleTypewriter";
 import { qualify_web_enquiry_log } from "./Components/logs_qualify_web_enquiry";
 import { find_suppliers_log } from "./Components/logs_find_suppliers";
 import { update_buying_lines_log } from "./Components/logs_update_buying_lines";
@@ -13,6 +10,53 @@ import { send_customer_email_log } from "./Components/logs_send_customer_email";
 import Step from "./Components/Step";
 import Header from "./Components/Header";
 import { generate_customer_email_log } from "./Components/logs_generate_customer_email";
+import { styled } from "styled-components";
+
+const AppContainer = styled.div`
+  background: #2f3640;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .modal {
+    width: 100%;
+    max-width: 1140px;
+    background: #181e27;
+    border-radius: 10px;
+
+    transition: 0.2s ease-in-out;
+    height: auto;
+    max-height: 100%;
+    overflow-y: scroll;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .modal-content {
+    padding: 50px;
+    padding-top: 25px;
+  }
+
+  .step-container {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #181e27;
+  }
+
+  .log-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+`;
 
 function App() {
   const [currentStatus, setCurrentStatus] = useState(0);
@@ -48,7 +92,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <AppContainer>
       <div
         className="modal"
         onClick={() => {
@@ -64,7 +108,6 @@ function App() {
           />
 
           <div className="step-container" ref={stepsRef}>
-            <div className="progress-bar"></div>
             <Step
               onClick={() =>
                 scrollToLog(logRefs.qualifyWebEnquiryRef, "qualify_web_enquiry")
@@ -403,7 +446,7 @@ function App() {
               </div>
             )}
 
-           {currentStatus > 1 && (
+            {currentStatus > 1 && (
               <div ref={logRefs.findSuppliers}>
                 <Log
                   heading_bold="Find"
@@ -464,6 +507,7 @@ function App() {
                   array={generate_customer_email_log}
                   highlightedLog={highlightedLog}
                   stepsRef={stepsRef}
+                 
                 ></Log>
               </div>
             )}
@@ -479,11 +523,11 @@ function App() {
                   stepsRef={stepsRef}
                 ></Log>
               </div>
-            )} 
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </AppContainer>
   );
 }
 
