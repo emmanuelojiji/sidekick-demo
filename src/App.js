@@ -403,7 +403,7 @@ function App() {
               </div>
             )}
 
-           {/* {currentStatus > 1 && (
+           {currentStatus > 1 && (
               <div ref={logRefs.findSuppliers}>
                 <Log
                   heading_bold="Find"
@@ -479,7 +479,7 @@ function App() {
                   stepsRef={stepsRef}
                 ></Log>
               </div>
-            )} */}
+            )} 
           </div>
         </div>
       </div>
