@@ -2,10 +2,12 @@ import avatar from "../Media/sidekick-avatar.svg";
 import { styled } from "styled-components";
 
 const ChatBubbleContainer = styled.div`
-  display: flex;
-  color: white;
-  align-items: center;
-  margin-top: 30px;
+  .chat-bubble-wrap {
+    display: flex;
+    color: white;
+    align-items: center;
+    margin-top: 30px;
+  }
 
   .chat-bubble {
     background: #007bff;
@@ -18,7 +20,7 @@ const ChatBubbleContainer = styled.div`
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 500px;
+    border-radius: 2em;
   }
 
   .chat-bubble-animation {
@@ -44,26 +46,12 @@ const ChatBubbleContainer = styled.div`
     display: flex;
     flex-direction: column;
   }
-
-  @keyframes chat-bubble-scale {
-    0% {
-      transform: scale(0);
-      max-height: 0;
-      opacity: 0;
-    }
-
-    100% {
-      transform: scale(1);
-      max-height: 5000px;
-      opacity: 1;
-    }
-  }
 `;
 
 const ChatBubbleDefault = ({ log }) => {
   return (
     <>
-      <div className="chat-bubble-details">
+      <ChatBubbleContainer className="chat-bubble-details">
         <div className="chat-bubble-wrap">
           <div className="chat-bubble">
             <img src={avatar} className="avatar" />
@@ -71,7 +59,7 @@ const ChatBubbleDefault = ({ log }) => {
           </div>
           <p className="time">10:30</p>
         </div>
-      </div>
+      </ChatBubbleContainer>
     </>
   );
 };

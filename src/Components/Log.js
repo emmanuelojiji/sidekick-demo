@@ -13,15 +13,15 @@ const LogContainer = styled.div`
 
   animation: open 3s linear forwards;
 
-  h2 {
-    color: white;
-  }
 
   .log-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: white;
   }
 
   .content {

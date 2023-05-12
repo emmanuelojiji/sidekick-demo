@@ -12,20 +12,18 @@
   min-height: 59px;
   padding-left: 11px;
   padding-right: 40px;
-  display: flex; 
+  display: flex;
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
- border-radius:2em;
+  border-radius: 2em;
 }
 
-.chat-bubble-animation{
+.chat-bubble-animation {
   animation: chat-bubble-scale 0.5s ease-in-out forwards;
-  transform-origin:left center;
+  transform-origin: left center;
   animation-delay: 1s;
 }
-
-
 
 .avatar {
   margin-right: 10px;
@@ -39,9 +37,6 @@
   font-size: 13px;
 }
 
-
-
-
 .chat-content-wrap {
   background: pink;
   display: flex;
@@ -49,16 +44,15 @@
 }
 
 @keyframes chat-bubble-scale {
-  0%{
+  0% {
     transform: scale(0);
     max-height: 0;
     opacity: 0;
   }
 
-  100%{
+  100% {
     transform: scale(1);
     max-height: 5000px;
     opacity: 1;
   }
 }
-
