@@ -1,15 +1,15 @@
 import JobInfo from "./Components/JobInfo";
 import { useState, useRef } from "react";
 import Log from "./Components/Log";
-import { qualify_web_enquiry_log } from "./Components/logs_qualify_web_enquiry";
-import { find_suppliers_log } from "./Components/logs_find_suppliers";
-import { update_buying_lines_log } from "./Components/logs_update_buying_lines";
-import { calculate_selling_prices_log } from "./Components/logs_calculate_selling_prices";
-import { assemble_email_details_log } from "./Components/logs_assemble_email_details";
-import { send_customer_email_log } from "./Components/logs_send_customer_email";
+import { qualify_web_enquiry_log } from "./Logs/logs_qualify_web_enquiry";
+import { find_suppliers_log } from "./Logs/logs_find_suppliers";
+import { update_buying_lines_log } from "./Logs/logs_update_buying_lines";
+import { calculate_selling_prices_log } from "./Logs/logs_calculate_selling_prices";
+import { assemble_email_details_log } from "./Logs/logs_assemble_email_details";
+import { send_customer_email_log } from "./Logs/logs_send_customer_email";
 import Step from "./Components/Step";
 import Header from "./Components/Header";
-import { generate_customer_email_log } from "./Components/logs_generate_customer_email";
+import { generate_customer_email_log } from "./Logs/logs_generate_customer_email";
 import { styled } from "styled-components";
 
 const AppContainer = styled.div`
