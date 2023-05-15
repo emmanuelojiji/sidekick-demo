@@ -5,6 +5,7 @@ import Pause from "./Pause";
 import Resume from "./Resume";
 import Complete from "./Complete";
 import { styled } from "styled-components";
+import Failed from "./Failed";
 
 const JobInfoContainer = styled.div`
   height: 230px;
