@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from "react";
 import avatar from "../Media/sidekick-avatar.svg";
 import { styled } from "styled-components";
 
